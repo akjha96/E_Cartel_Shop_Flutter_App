@@ -6,15 +6,10 @@ import '../data/product_list.dart';
 class ProductsProvider with ChangeNotifier {
   final List<Product> _items = ProductList.productList;
 
-  bool _showFavoritesOnly = false;
+  List<Product> get items => [..._items];
 
-  List<Product> get items {
-    if (_showFavoritesOnly) {
-      return _items.where((productItem) => productItem.isFavorite).toList();
-    } else {
-      return [..._items];
-    }
-  }
+  List<Product> get favouriteItems =>
+      _items.where((productItem) => productItem.isFavorite).toList();
 
   void addProvider() {
     // _items.add(value);
@@ -23,14 +18,4 @@ class ProductsProvider with ChangeNotifier {
 
   Product findProductById(String id) =>
       _items.firstWhere((product) => product.id == id);
-
-  void showFavoritesOnly() {
-    _showFavoritesOnly = true;
-    notifyListeners();
-  }
-
-  void showAll() {
-    _showFavoritesOnly = false;
-    notifyListeners();
-  }
 }
