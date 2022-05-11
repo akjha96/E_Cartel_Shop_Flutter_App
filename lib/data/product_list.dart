@@ -1,4 +1,4 @@
-import '../models/product.dart';
+import '../providers/product.dart';
 
 class ProductList {
   static final List<Product> productList = [
@@ -33,6 +33,38 @@ class ProductList {
       price: 49.99,
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
+    ),
+    Product(
+      id: 'p5',
+      title: 'White T-Shirt',
+      description: 'A White T-Shirt - it is pretty white!',
+      price: 39.99,
+      imageUrl:
+          'https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    ),
+    Product(
+      id: 'p6',
+      title: 'Sony Wireless Speaker',
+      description: 'Amazing sound quality with Sony\'s trust',
+      price: 99.99,
+      imageUrl:
+          'https://images.unsplash.com/photo-1651570745243-f70ee3ae9111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    ),
+    Product(
+      id: 'p7',
+      title: 'Designer shoes',
+      description: 'Snug fit - exactly what you need for the road.',
+      price: 79.99,
+      imageUrl:
+          'https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    ),
+    Product(
+      id: 'p8',
+      title: 'Fedora Hat',
+      description: 'Best for sunny beach',
+      price: 89.99,
+      imageUrl:
+          'https://images.unsplash.com/photo-1595642527925-4d41cb781653?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
     ),
   ];
 }
