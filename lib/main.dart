@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             ).copyWith(
               secondary: Colors.deepOrange,
             )),
-        home: ProductOverviewScreen(),
+        home: const ProductOverviewScreen(),
         routes: {
           ProductDetailScreen.routeName: (context) =>
               const ProductDetailScreen(),

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../providers/product.dart';
 import '../data/product_list.dart';
 import '../widgets/products_grid.dart';
 import '../enums/filter_options_enum.dart';
+import '../widgets/badge.dart';
+import '../providers/cart_provider.dart';
 
 class ProductOverviewScreen extends StatefulWidget {
-  ProductOverviewScreen({Key? key}) : super(key: key);
+  const ProductOverviewScreen({Key? key}) : super(key: key);
 
   @override
   State<ProductOverviewScreen> createState() => _ProductOverviewScreenState();
@@ -26,7 +29,6 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
-              print('Selected Value $selectedValue');
               setState(() {
                 if (selectedValue == FilterOptions.favourites) {
                   _showOnlyFavorites = true;
@@ -43,6 +45,16 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               const PopupMenuItem(
                   child: Text('Show All'), value: FilterOptions.all),
             ],
+          ),
+          Consumer<CartProvider>(
+            builder: (_, cart, child) => Badge(
+              child: child!,
+              value: cart.itemCount.toString(),
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.shopping_cart),
+            ),
           ),
         ],
       ),

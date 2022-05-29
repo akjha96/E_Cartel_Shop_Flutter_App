@@ -1,11 +1,13 @@
 import 'package:flutter/foundation.dart';
 
-import './cart.dart';
+import 'cart_item.dart';
 
 class CartProvider with ChangeNotifier {
-  late Map<String, CartItem> _items;
+  Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items => {..._items};
+
+  int get itemCount => _items.length;
 
   void addItem(
     String productId,
@@ -31,5 +33,6 @@ class CartProvider with ChangeNotifier {
                 price: price,
               ));
     }
+    notifyListeners();
   }
 }
