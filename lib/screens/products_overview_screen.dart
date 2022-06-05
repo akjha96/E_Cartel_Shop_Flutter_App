@@ -7,6 +7,7 @@ import '../widgets/products_grid.dart';
 import '../enums/filter_options_enum.dart';
 import '../widgets/badge.dart';
 import '../providers/cart_provider.dart';
+import 'cart_screen.dart';
 
 class ProductOverviewScreen extends StatefulWidget {
   const ProductOverviewScreen({Key? key}) : super(key: key);
@@ -52,7 +53,8 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               value: cart.itemCount.toString(),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(CartScreen.routeName),
               icon: const Icon(Icons.shopping_cart),
             ),
           ),
