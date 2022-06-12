@@ -1,4 +1,5 @@
 import 'package:e_cartel_shop/providers/orders_provider.dart';
+import 'package:e_cartel_shop/screens/orders_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -49,6 +50,7 @@ class CartScreen extends StatelessWidget {
                             .addOrder(
                                 cart.items.values.toList(), cart.totalAmount);
                         cart.clear();
+                        Navigator.of(context).pushNamed(OrdersScreen.routeName);
                       },
                       child: const Text('ORDER NOW'),
                       style: TextButton.styleFrom(
