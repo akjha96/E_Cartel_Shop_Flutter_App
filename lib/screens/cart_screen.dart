@@ -1,9 +1,10 @@
-import 'package:e_cartel_shop/providers/cart_item.dart';
+import 'package:e_cartel_shop/providers/orders_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/cart_provider.dart';
 import '../widgets/cart_item_list.dart';
+import '../providers/orders_provider.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -43,7 +44,12 @@ class CartScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<OrdersProvider>(context, listen: false)
+                            .addOrder(
+                                cart.items.values.toList(), cart.totalAmount);
+                        cart.clear();
+                      },
                       child: const Text('ORDER NOW'),
                       style: TextButton.styleFrom(
                           primary: Theme.of(context).colorScheme.primary),
