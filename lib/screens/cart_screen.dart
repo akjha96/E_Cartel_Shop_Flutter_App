@@ -21,9 +21,9 @@ class CartScreen extends StatelessWidget {
         body: Column(
           children: [
             Card(
-              margin: EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               child: Padding(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -31,7 +31,7 @@ class CartScreen extends StatelessWidget {
                       'Total',
                       style: TextStyle(fontSize: 20),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       margin: const EdgeInsets.only(right: 10),
                       child: Chip(

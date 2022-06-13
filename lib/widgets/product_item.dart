@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +41,9 @@ class ProductItem extends StatelessWidget {
           ),
           trailing: IconButton(
             onPressed: () {
-              print('item added to cart ${product.id}');
+              if (kDebugMode) {
+                print('item added to cart ${product.id}');
+              }
               cart.addItem(product.id, product.price, product.title);
             },
             icon: const Icon(Icons.shopping_cart),
