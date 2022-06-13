@@ -23,7 +23,7 @@ class OrdersProvider with ChangeNotifier {
     notifyListeners();
   }
 
-void clearCart() {
+  void clearCart() {
     _orders = [];
     notifyListeners();
   }
